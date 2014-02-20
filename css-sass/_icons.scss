@@ -1,0 +1,14 @@
+$volume-down: "\e600";
+$volume: "\e601";
+$fullscreen: "\e602";
+$fullscreen-down: "\e603";
+$facebook: "\e604";
+$twitter: "\e605";
+$play: "\e606";
+$pause: "\e607";
+
+@mixin icon($icon) {
+	font-family: $font-icons;
+	content: $icon;
+	speak: none;
+}

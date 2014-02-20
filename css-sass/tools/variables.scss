@@ -1,0 +1,52 @@
+//
+// Variables
+// ---------------------------------
+
+// URL
+$url-medias: 			"../medias/";
+$url-img: 				"#{$url-medias}images/";
+$url-dyn: 				"#{$url-medias}dyn/";
+$url-font: 				"#{$url-medias}fonts/";
+$url-picto:				"#{$url-img}pictos/";
+$url-fallback:			"#{$url-img}fallbacks/";
+$url-elt:				"#{$url-img}elements/";
+$url-player:			"#{$url-img}player/";
+
+
+// base colors
+// generic
+$base-black: 			#000;
+$base-white: 			#fff;
+$base-yellow: 			#fff700;
+$base-grey: 			#aaa;
+$ring-grey: 			#050505;
+$base-grey--lighter: 	#ccc;
+$volume-active: 		#dedddc;
+$volume-track: 			#6b6b6b;
+$quality-button: 		#686868;
+
+
+// Typography
+$font: 					$base-black;
+
+$font-serif: 			Georgia, Times, "Times New Roman", serif;
+$font-sans-serif:		'francoisone',Arial, Helvetica, sans-serif;
+$font-site: 			$font-sans-serif;
+$font-icons: 			'icons';
+
+$font-size:				100%; // 62.5% => 10px // 68.75% = > 11px* // 75% => 12px // 81.25% => 13px // 100% => 16px
+$font-base-size:		16;
+$font-line-height:		( ( $font-base-size + 2 ) /  $font-base-size );
+
+
+// backgrounds
+$bg-select: 			rgba( 0, 0, 0, 0 );
+
+
+// links
+$link: 					$font;
+$link-hover: 			$font;
+$link-visited: 			$font;
+
+// sizes
+$footer-height: ( 50em / $font-base-size );

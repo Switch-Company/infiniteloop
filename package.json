@@ -1,0 +1,31 @@
+{
+  "name": "iL",
+  "version": "0.1.0",
+  "title": "Infinite Loop",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "grunt dev && grunt concurrent"
+  },
+  "author": "Switch Team",
+  "license": "",
+  "devDependencies": {
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-sass": "~0.5.0",
+    "grunt-notify": "0.2.13",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-jade": "~0.8.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-jshint": "~0.6.4",
+    "load-grunt-config": "~0.5.0",
+    "grunt-tree": "~0.4.4",
+    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt-img": "~0.1.7",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-webp": "0.0.1",
+    "webp-bin": "~0.1.4",
+    "grunt-concurrent": "~0.4.3"
+  }
+}

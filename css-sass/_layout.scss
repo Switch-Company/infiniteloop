@@ -1,0 +1,479 @@
+.preloader {
+	display: none;
+}
+
+.js {
+	[id=main] {
+		> section {
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 1;
+			display: none;
+			height: 100%;
+			width: 100%;
+
+			&.display {
+				display: block;
+			}
+		}
+	}
+}
+
+/* != Player
+--------------------------------------------------------------------------- */
+
+[id=player] {
+	background-color: $base-black;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	visibility: hidden;
+	width: 100%;
+	z-index: 1;
+}
+
+/* != Roue
+--------------------------------------------------------------------------- */
+
+[id=wheel] {
+	// background: url('#{$url-dyn}pedagogy/000.jpg') no-repeat center;
+	// background-size: cover;
+	cursor: pointer;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+
+	.backface {
+		display: none;
+	}
+
+	video + div:not( .infos ){
+		position: absolute!important;
+		top: 0;
+		width: 100%;
+	}
+
+	.infos, #wheelWrapper, .control {
+		@include transition-property( transform );
+		@include transition-duration( 0.2s );
+		@include transition-timing-function( cubic-bezier( .53,.95,.23,1 ) );
+		@include transition-delay( 0.35s );
+	}
+
+	.touch & {
+		.infos, #wheelWrapper, .control {
+			@include transition-property( transform, opacity );
+			@include transition-duration( 0.2s, 0.5s );
+			@include transition-timing-function( cubic-bezier( .53,.95,.23,1 ), linear );
+			@include transition-delay( 0.35s, 0s );
+		}
+	}
+
+	.backface & {
+		.infos, #wheelWrapper, .control {
+			@include transition-delay( 0s );
+			@include transform( scale( 0.97 ) );
+		}
+	}
+
+	header {
+		display: none;
+		height: 100%;
+		position: relative;
+		pointer-events: none;
+		z-index: 10;
+
+		.skip {
+			background: none;
+			border: none;
+			color: $base-white;
+			display: block;
+			font-size: (25/16);
+			letter-spacing: (-1em/25);
+			line-height: (27/25);
+			padding: 0;
+			position: absolute;
+			pointer-events: auto;
+			right: (10em/16);
+			top: (10em/16);
+			text-transform: uppercase;
+
+			&:hover,
+			&:focus {
+				outline: none;
+			}
+		}
+
+		h1, p {
+			color: $base-white;
+			font-size: (58em/16);
+			letter-spacing: (-1em/58);
+			line-height: (60/58);
+			margin: 0;
+			opacity: 0;
+			//padding-top: 13px;
+			position: absolute;
+			top: 50%;
+			width: 100%;
+			text-align: center;
+			@include transform( translateY( -50% ) );
+			@include transform-origin( 50% 75%);
+		}
+
+		span {
+			display: block;
+			text-transform: uppercase;
+		}
+
+		.small{
+			font-size: (25em/58);
+			line-height: (27/25);
+			opacity: 0;
+			text-transform: none;
+		}
+
+		.cta {
+			font-size: (46em/16);
+			line-height: (52/50);
+		}
+	}
+}
+
+[id=swap] {
+	background-color: $base-black;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+[id=wheelWrapper] {
+	position: absolute!important;
+	z-index: 1;
+	-webkit-backface-visibility: hidden;
+
+	tspan {
+		fill: $base-white;
+		font-family: $font-site;
+		font-size: (25em/16);
+		line-height: (27/16);
+		pointer-events: none;
+		text-transform: uppercase;
+
+		&::selection {
+			background: transparent;
+		}
+	}
+}
+
+	path {
+		cursor: pointer;
+	}
+
+$controlHeight: 108em;
+
+.infos {
+	color: $base-white;
+	font-family: $font-site;
+	height: 420px;
+	left: 50%;
+	position: absolute;
+	margin: -210px 0 0 -150px;
+	text-align: center;
+	top: 50%;
+	width: 300px;
+	z-index: 2;
+	text-shadow: 0 0 6px $base-black;
+	pointer-events: none;
+
+	&::selection {
+		background: transparent;
+	}
+
+	.ttl-track {
+		font-size: (30em/16);
+		line-height: (32/30);
+		margin-top: (72em/30);
+		margin-bottom: ( ( $controlHeight + 18) / 30 );
+		min-height: (32em*2/30);
+		position: relative;
+		text-transform: uppercase;
+		pointer-events: auto;
+
+		span{
+			left: 0;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+		}
+
+		&::selection {
+			background: transparent;
+		}
+	}
+
+	.dsc-track {
+		font-size: (15em/16);
+		line-height: (17/15);
+		margin-top: ( ( $controlHeight + 50) / 15 );
+		pointer-events: auto;
+
+		&::selection {
+			background: transparent;
+		}
+	}
+}
+
+.control {
+	@include linear-gradient( $base-yellow 0%, transparentize( $base-yellow, 0.2 ) 4%, transparentize( $base-yellow, 0.6 ) 12%, transparent 36%, transparent 64%, transparentize( $base-black, 0.6 ) 88%, $base-black 100% );
+	background-color: rgba( 255, 255, 255, 0.2 );
+	border-radius: 31px;
+	height: ($controlHeight/16);
+	left: 50%;
+	margin: (-54em/16) 0 0 (-31em/16);
+	position: absolute;
+	top: 50%;
+	width: (62em/16);
+	z-index: 3;
+	-webkit-touch-callout: none;
+
+	&::selection {
+		background: transparent;
+	}
+
+	button {
+		background: none;
+		border: 0;
+		display: block;
+		height: 36px;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+
+		&:focus,
+		&:hover {
+			outline: none;
+		}
+	}
+
+	button.playback {
+		height: (57em/16);
+		overflow: hidden;
+		position: absolute;
+		left: 0;
+		top: (26em/16);
+		z-index: 2;
+
+		&:before {
+			display: block;
+			font-size: (56em/16);
+			color: rgba( 0, 0, 0, 0.6 );
+			@include transition( color 0.25s linear );
+		}
+
+		&.play:before {
+			@include icon( $pause );
+		}
+
+		&.pause:before {
+			@include icon( $play );
+		}
+
+		&:focus,
+		&:hover {
+			&:before {
+				color: rgba( 0, 0, 0, 1 );
+			}
+		}
+
+		span {
+			position: absolute;
+			visibility: hidden;
+		}
+
+	}
+}
+	[id=controlProgress] {
+		left: 3px!important;
+		position: absolute!important;
+		top: 0!important;
+	}
+
+/* != Layout text
+--------------------------------------------------------------------------- */
+.close {
+	background: none;
+	border: 0;
+	display: none;
+	height: 30px;
+	position: absolute;
+	right: 18px;
+	top: 18px;
+	width: 30px;
+	z-index: 1;
+
+	span {
+		position: absolute;
+		visibility: hidden;
+	}
+
+	&:before,
+	&:after {
+		background-color: $base-white;
+		content: '';
+		position: absolute;
+		display: block;
+		height: 41px;
+		right: 0;
+		speak: none;
+		width: 2px;
+		@include transition( background 0.25s linear );
+	}
+
+	&:before {
+		top: 0px;
+		@include transform-origin( 0 0 );
+		@include transform( rotate( 45deg ) );
+	}
+
+	&:after {
+		bottom: 1px;
+		@include transform-origin( 100% 100% );
+		@include transform( rotate( -45deg ) );
+	}
+
+	&:hover,
+	&:focus {
+		outline: none;
+
+		&:before,
+		&:after {
+			outline: none;
+			background-color: $base-yellow;
+		}
+	}
+}
+.l-txt {
+	color: $base-white;
+	position: relative;
+
+	.full-txt{
+		height: 100%;
+		position: relative;
+		width: 100%;
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.js & {
+		@include box-sizing( border-box );
+		-webkit-backface-visibility: hidden;
+		background-color: transparentize( $base-black, 0.1 );
+		padding-bottom: $footer-height;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 2;
+
+		&.display .close {
+			display: block;
+			position: fixed;
+		}
+	}
+
+	.sign {
+		text-align: right;
+	}
+	.wrp-txt {
+		@include clearfix;
+		margin: 0 auto;
+		padding: 0 (18em/16);
+		width: (772em/16);
+
+		div {
+			margin-top: 1em;
+			width: (358%*100/736);
+
+			float:left;
+
+			&.right {
+				float: right;
+			}
+		}
+	}
+
+	[class^=ttl-txt]{
+		color: $base-yellow;
+		font-size: (22em/16);
+		font-weight: normal;
+		line-height: (16/22);
+		text-transform: uppercase;
+		margin: 55px 0 25px;
+		width: (480em/22);
+	}
+
+	[class^=sttl-txt] {
+		color: $base-grey;
+		font-size: (14em/16);
+		font-weight: normal;
+		line-height: (16/14);
+		margin-bottom: (-16em/14);
+		text-transform: uppercase;
+	}
+	p[class^=sttl-txt]{
+		margin: (16em/14) 0;
+	}
+
+	.sttl-txt--small{
+		margin-top: (16em/14);
+		text-transform: none;
+	}
+
+	p,
+	li {
+		font-size: (14em/16);
+		line-height: (16/14);
+		margin: (16em/14) 0;
+
+		a {
+			color: inherit;
+		}
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	li{
+		margin: 0;
+
+		span {
+			display: block;
+			color: $base-grey;
+		}
+	}
+
+	.with li {
+		line-height: (20/14);
+
+		span {
+			margin-top: (-6em/14);
+		}
+	}
+
+	.lk-ext{
+		display: inline-block;
+		padding: (4em/16) (8em/16);
+		margin-top: (7em/16);
+		color: $base-yellow;
+		text-decoration: none;
+		border: (1em/16) solid $base-yellow;
+	}
+
+}

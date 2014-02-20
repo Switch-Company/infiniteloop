@@ -1,0 +1,31 @@
+{
+  "cdn": "/",
+  "colors": {
+    "outer": "#fff700",
+    "center": "#fff700",
+    "inner": "#111111"
+  },
+  "pages": {
+    "link1": "lien1",
+    "link2": "lien2",
+    "wheel": "roue"
+  },
+  "tracks": [
+    {
+      "id": 1,
+      "type": "inner",
+      "duration": 102957.279,
+      "name": "video01",
+      "title": "Titre 1",
+      "description": "Description 1"
+    },
+    {
+      "id": 2,
+      "type": "outer",
+      "duration": 63738.778000000006,
+      "name": "video02",
+      "title": "Titre 2",
+      "description": "Description 2"
+    }
+  ]
+}

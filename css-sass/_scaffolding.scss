@@ -1,0 +1,248 @@
+html,
+body {
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+body {
+	font-family: $font-site;
+	font-size: $font-size;
+	line-height: $font-line-height;
+	background-color: $base-black;
+	overflow: hidden;
+}
+
+/* != Main
+--------------------------------------------------------------------------- */
+#main {
+	width: 100%;
+
+	.js & {
+		height: 100%;
+	}
+}
+
+
+/* != Footer
+--------------------------------------------------------------------------- */
+#footer {
+	background-color: $base-black;
+	bottom: 0;
+	clear: both;
+	height: $footer-height;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+
+	.touch & {
+		@include transition( opacity 0.5s linear );
+	}
+
+	ul{
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		color: $base-white;
+		list-style: none;
+	}
+}
+
+	.no-fullscreen .size {
+		display: none;
+	}
+
+	.touch .sound {
+		display: none;
+	}
+
+	.f-aside {
+		float: left;
+
+		li {
+			float: left;
+			padding: 0 (10em/16);
+		}
+
+		a {
+			color: $base-grey--lighter;
+			font-size: (14em/16);
+			line-height: (50em/14);
+
+			text-decoration: none;
+		}
+	}
+
+	.f-actions {
+		float: right;
+
+		button,
+		a {
+			display: block;
+			height: 100%;
+			color: $base-white;
+
+			&:after {
+				display: inline-block;
+				padding: (15em/16) 0 (15em/16) (9em/16);
+			}
+
+			span {
+				position: absolute;
+				visibility: hidden;
+			}
+
+			&:focus,
+			&:hover {
+				outline: none;
+				&:after {
+					text-shadow: 0 0 20px rgba( 255, 255, 255, 0.7 );
+					@include transform( scale( 1.1 ) );
+				}
+			}
+		}
+
+		button {
+			outline: none;
+			background: none;
+			border: 0;
+			text-align: center;
+			width: (40em/16);
+			padding: 0;
+
+			&:after {
+				padding-left: 0;
+			}
+		}
+		.quality {
+			padding-right: (10em/16);
+
+			button {
+				color: $quality-button;
+				float: left;
+				padding: 0 (2em/16);
+				width: auto;
+				text-transform: uppercase;
+
+				&:hover,
+				&.current {
+					color: $base-white;
+				}
+			}
+
+			&.disabled {
+				button,
+				button.current {
+					color: $quality-button;
+				}
+			}
+		}
+
+		li {
+			float: left;
+			height: 100%;
+		}
+
+		.sound {
+
+			height: 100%;
+			position: relative;
+
+			&.muted .muter:after {
+				@include icon( $volume-down );
+			}
+
+			&.muted .volume {
+				bottom: 0%!important;
+
+					.shadow {
+						height: 0%!important;
+					}
+			}
+
+			&.show {
+				.volumeLayer,
+				.shadow {
+					visibility: visible;
+				}
+			}
+		}
+
+			.muter {
+				font-size: (20em/16);
+
+				&:after {
+					padding: (12em/20) 0 (14em/20) (9em/20);
+					@include icon( $volume );
+				}
+			}
+
+			.volumeLayer {
+				$vl-width: (20em/16);
+				background-color: transparentize( $base-black, 0.2 );
+				border-radius: $vl-width $vl-width 0 0;
+				bottom: (50em/16);
+				height: (74em/16);
+				left: 50%;
+				margin-left: (-9em/16);
+				position: absolute;
+				visibility: hidden;
+				width: $vl-width;
+
+				.volumeTrack {
+					background-color: $volume-track;
+					border-radius: (4em/16);
+					cursor: pointer;
+					height: (60em/16);
+					left: 50%;
+					margin-left: (-2em/16);
+					position: absolute;
+					top: (10em/16);
+					width: (4em/16);
+					z-index: 1;
+				}
+			}
+
+				.volume {
+					background-color: $volume-active;
+					border-radius: (8em/16);
+					bottom: 100%;
+					height: (8em/16);
+					left: 50%;
+					margin: (-4em/16);
+					position: absolute;
+					width: (8em/16);
+					z-index: 3;
+
+					.shadow {
+						background-color: $volume-active;
+						border-radius: (4em/16);
+						display: block;
+						height: (60em/16);
+						left: 50%;
+						margin-left: (-2em/16);
+						position: absolute;
+						top: (4em/16);
+						width: (4em/16);
+						z-index: 1;
+					}
+				}
+
+
+		.size {
+			&:after {
+				@include icon( $fullscreen );
+
+				html:-webkit-full-screen &{
+					@include icon( $fullscreen-down );
+				}
+				html:-moz-full-screen &{
+					@include icon( $fullscreen-down );
+				}
+				html:fullscreen & {
+					@include icon( $fullscreen-down );
+				}
+			}
+		}
+	}

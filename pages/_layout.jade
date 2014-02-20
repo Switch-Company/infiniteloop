@@ -1,0 +1,45 @@
+block vars
+
+!!! 5
+html( class="no-js no-fullscreen loading", lang=lang )
+  head
+    meta( charset="utf-8" )
+    meta( http-equiv="X-UA-Compatible", content="IE=edge,chrome=1" )
+
+    title=title
+
+    //- Mobile
+    meta( name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=no" )
+    meta( name="apple-mobile-web-app-capable", content="yes" )
+    meta( name="apple-mobile-web-app-title", content=title )
+    meta( name="apple-mobile-web-app-status-bar-style", content="black" )
+    meta( name="format-detection", content="telephone=no" )
+
+    //- icons
+    link( rel="apple-touch-icon-precomposed", sizes="144x144", href="#{settings.url.icon}apple-touch-icon-144x144-precomposed.png" )
+    link( rel="apple-touch-icon-precomposed", sizes="114x114", href="#{settings.url.icon}apple-touch-icon-114x114-precomposed.png" )
+    link( rel="apple-touch-icon-precomposed", sizes="72x72", href="#{settings.url.icon}apple-touch-icon-72x72-precomposed.png" )
+    link( rel="apple-touch-icon-precomposed", href="#{settings.url.icon}apple-touch-icon-57x57-precomposed.png" )
+    link( rel="shortcut icon", href="#{settings.url.icon}apple-touch-icon.png" )
+
+    //- Microsoft: typography + tile icon and color
+    meta( name="msapplication-TileImage", content="#{settings.url.icon}ms-icon-144x144.png" )
+    meta( name="msapplication-TileColor", content="#fff700" )
+    meta( name="title", content="#{title}" )
+    meta( http-equiv="cleartype", content="on" )
+
+    //- Facebook
+    meta( name="description", content="" )
+    meta( property="og:title", content=title )
+    meta( property="og:image", content="" )
+
+    //- Modernizr
+    script(src="#{settings.url.js}vendors/modernizr.js")
+
+    //- Stylesheets
+    link( rel="stylesheet", href="#{settings.url.css}styles.css" )
+
+  body(class=type)
+    block site_content
+
+    block scripts
