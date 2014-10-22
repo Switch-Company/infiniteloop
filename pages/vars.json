@@ -1,0 +1,20 @@
+{
+  "title": "Infinite Loop",
+  "lang": "fr",
+  "url": "",
+  "git": "https://github.com/Switch-Company/infiniteloop",
+
+  "settings": {
+    "url" : {
+      "audio": "/medias/audios/",
+      "css": "/css/",
+      "dyn": "/medias/dyn/",
+      "elt": "/medias/images/elements/",
+      "icon": "/medias/icons/",
+      "img": "/medias/images/",
+      "js": "/js/",
+      "picto": "/medias/images/pictos/",
+      "text": "/medias/images/texts/"
+    }
+  }
+}

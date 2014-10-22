@@ -1,0 +1,79 @@
+extends _layout
+block vars
+  - var type = "player";
+
+block site_content
+  div.site_content
+    div#main
+
+      block content
+        section#wheel
+
+        section#link1.l-txt
+
+          button(type="button").close
+            span Fermer le contenu
+
+          div.full-txt
+
+            div.wrp-txt
+              h1.ttl-txt Titre de niveau 1
+
+              h2.sttl-txt--small  Titre de niveau 2 “small”
+
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officiis vel amet provident laborum ullam pariatur perferendis ipsa asperiores magni omnis natus vero non aperiam commodi. Autem, tempore animi inventore.
+
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, eum, esse rerum voluptates quo doloribus ratione veniam minus ab autem officiis dolorum aliquam at vero harum? Magni, rem nobis quasi?
+
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, consectetur, numquam, praesentium, cupiditate ex doloribus quas rem nisi sapiente aliquam omnis quo cum. Amet, officia, dignissimos nulla qui consequuntur quae.
+
+              h2.sttl-txt  Titre de niveau 2
+
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officiis vel amet provident laborum ullam pariatur perferendis ipsa asperiores magni omnis natus vero non aperiam commodi. Autem, tempore animi inventore.
+
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, eum, esse rerum voluptates quo doloribus ratione veniam minus ab autem officiis dolorum aliquam at vero harum? Magni, rem nobis quasi?
+
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, consectetur, numquam, praesentium, cupiditate ex doloribus quas rem nisi sapiente aliquam omnis quo cum. Amet, officia, dignissimos nulla qui consequuntur quae.
+
+              a.lk-ext( href=git, target="_blank", data-track="share" ) Lien externe
+
+              p.sign Signature
+
+        section#link2.l-txt
+
+          button(type="button").close
+            span Fermer le contenu
+
+          div.full-txt
+
+            div.wrp-txt
+              h1.ttl-txt Titre de niveau 1
+
+              p <a class="lk-flat" href="#" target="_blank">Lien souligné</a>
+
+              div.left
+                h2.sttl-txt Colonne de gauche
+
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, eum, esse rerum voluptates quo doloribus ratione veniam minus ab autem officiis dolorum aliquam at vero harum? Magni, rem nobis quasi?
+
+                h2.sttl-txt Liste
+                ul
+                  li element 1
+                  li element 2
+                  li …
+              div.right
+
+                h2.sttl-txt  Colonne de droite
+
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, officiis vel amet provident laborum ullam pariatur perferendis ipsa asperiores magni omnis natus vero non aperiam commodi. Autem, tempore animi inventore.
+
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, eum, esse rerum voluptates quo doloribus ratione veniam minus ab autem officiis dolorum aliquam at vero harum? Magni, rem nobis quasi?
+
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, consectetur, numquam, praesentium, cupiditate ex doloribus quas rem nisi sapiente aliquam omnis quo cum. Amet, officia, dignissimos nulla qui consequuntur quae.
+
+
+      block footer
+        include _layout/footer.jade
+
+block scripts
+  include _layout/scripts.jade

@@ -1,0 +1,5 @@
+if scripts
+  each script in scripts
+    script( src=[ '/js/', script, '.js' ].join( '' ) )
+else
+  script( src='/js/init.js' )

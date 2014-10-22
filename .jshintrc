@@ -1,0 +1,22 @@
+{
+  "globals": {
+    "$": true,
+    "define": true,
+    "require": true,
+    "Modernizr": true,
+    "Backbone": true,
+    "_": true
+  },
+  "boss": true,
+  "browser": true,
+  "curly": true,
+  "eqeqeq": true,
+  "eqnull": true,
+  "immed": true,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "sub": true,
+  "undef": true,
+  "unused": false
+}
